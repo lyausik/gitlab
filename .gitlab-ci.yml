@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - script
+  - test_after_build
+
+build_app:
+  stage: build
+  script:
+    - bash build.sh
+
+run_tests:
+  stage: test
+  script:
+    - bash test.sh
+
+custom_script:
+  stage: script
+  script:
+    - bash custom.sh
+
+test_after_build:
+  stage: test_after_build
+  script:
+    - bash test_again.sh
